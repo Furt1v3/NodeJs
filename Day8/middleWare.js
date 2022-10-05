@@ -1,20 +1,18 @@
 var express = require('express');
 var app = express();
 
-//First middleware before response is sent
-app.use(function(req, res, next){
-   console.log("Start");
+app.use((req, res, next) => {
+   console.log('start program');
    next();
 });
 
-//Route handler
-app.get('/', function(req, res, next){
-   res.send("Middle");
+app.get ('/', (req, res, next) => {
+   res.send("Testing MiddleWare");
    next();
 });
 
-app.use('/', function(req, res){
-   console.log('End');
+app.use('/' , (req, res) => {
+   console.log('End Program');
 });
 
-app.listen(3000);
+app.listen(3200);
