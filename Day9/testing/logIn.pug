@@ -1,0 +1,9 @@
+html 
+  head 
+    tile Testing Login/SignUp
+
+  body 
+    if(user)
+      h1 Hi! #{user.name}
+    else 
+      a(href="./signUp") Sign Up 
