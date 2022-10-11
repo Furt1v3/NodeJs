@@ -1,0 +1,15 @@
+html
+html
+   head
+      title Form Tester
+   body
+      form(action = "/api/posts", method = "POST")
+         div
+            label(for = "name") Name:
+            input(name = "name" value = "")
+         br
+         div
+            label(for = "description") Description:
+            input(name = "description" value = "")
+         br
+         button(type = "submit") Submit
