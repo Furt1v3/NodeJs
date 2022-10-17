@@ -16,4 +16,6 @@ app.use(function(err, req, res, next) {
    res.send("Oops, something went wrong.")
 });
 
-app.listen(3000);
+app.listen(3000 ,() => {
+   console.log("Server is running");
+});
