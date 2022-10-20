@@ -16,7 +16,7 @@ app.use(multer().array("mg mg"));
 mongoose
   .connect(process.env.DATABASE || "")
   .then(() => {
-    app.listen(1500, () => console.log(`Server running on port ${PORT}`));
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     app.use('/movies', movie_route);
   })
 
