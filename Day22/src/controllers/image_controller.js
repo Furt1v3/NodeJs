@@ -1,13 +1,12 @@
 const deleteFile = require('../utils');
 const { Image } = require('../models/images');
 
-module.exports = creatImage = async (req, res, _next) => {
+const createImage = async (req, res, _next) => {
   try {
     let profile = req.body.profileImage;
     console.log(profile);
     if ( req.file ) {
       profile = req.file.path.replace('\\','/');
-      console.log(profile);
     }
     const fileUpload = {
       profile : profile
@@ -21,7 +20,7 @@ module.exports = creatImage = async (req, res, _next) => {
   }
 };
 
-module.exports = editImage = async (req, res, _next) => {
+const editImage = async (req, res, _next) => {
   try {
    const img = await Image.findById(req.params.id);
    let profile = req.body.profileImage;
@@ -39,3 +38,5 @@ module.exports = editImage = async (req, res, _next) => {
     console.log(err)
   }
 };
+
+module.exports = { createImage , editImage }
